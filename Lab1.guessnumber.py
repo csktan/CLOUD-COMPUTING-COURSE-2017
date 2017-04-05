@@ -21,9 +21,7 @@ def new_game():
     
     if num_range == 20 : 	
         guesses_left = 3
-    #elif num_range == 1000 :
-     #   guesses_left = 10
-      
+       
 
     print "New game. The range is from 0 to", num_range, ". Good luck!"
     print "Number of remaining guesses is ", guesses_left, "\n"
@@ -37,13 +35,7 @@ def range20():
     new_game() 
     pass
 
-#def range1000():
- #   global num_range
-  #  num_range = 1000 # button that changes range to range [0,1000) and restarts
-   # new_game()
-    #pass
-
-    
+   
 def input_guess(guess):    
     # main game logic goes here	
     global guesses_left
@@ -82,18 +74,8 @@ f.set_canvas_background('Green')
 
 # register event handlers for control elements
 f.add_button("Range is [0, 20)", range20, 20)
-#f.add_button("Range is [0, 1000)", range1000, 100)	
 f.add_input("Enter your guess", input_guess, 20)
 
 # call new_game and start frame
 new_game()
 f.start()
-
-
-
-# always remember to check your completed program against the grading rubric
-
-    Contact GitHub API Training Shop Blog About 
-
-    © 2017 GitHub, Inc. Terms Privacy Security Status Help 
-
