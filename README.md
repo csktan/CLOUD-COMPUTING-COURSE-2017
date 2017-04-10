@@ -4,7 +4,14 @@
 here we have started assignments for the second part 
 of the cloud (CLC)
 installed the ubuntu16.04 in vmware
+# to run the program Lab1.guessnumber.py
+you should be intalled library.
 
+-sudo pip install SimpleGUICS2Pygame
+
+and run as 
+
+-python Lab1.guessnumber.py ## Python 2.7.12
 
 
 # LAB 02

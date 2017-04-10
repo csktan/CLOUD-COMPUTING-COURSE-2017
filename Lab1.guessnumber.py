@@ -1,10 +1,14 @@
-#first python program to guess the number
+
+#program to guess the number
 #   @csktan
 
-import simplegui
 import random
 import math
 
+try:
+    import simplegui
+except ImportError:
+    import SimpleGUICS2Pygame.simpleguics2pygame as simplegui
 # initialize global variables used in your code
 num_range = 20
 secret_num = 0
@@ -19,14 +23,13 @@ def new_game():
     
     secret_num = random.randrange(0, num_range)
     
-    if num_range == 20 : 	
+    if num_range == 20 :    
         guesses_left = 3
        
 
-    print "New game. The range is from 0 to", num_range, ". Good luck!"
-    print "Number of remaining guesses is ", guesses_left, "\n"
+    print ("New game. The range is from 0 to") , num_range, (". Good luck!")
+    print ("Number of remaining guesses is ") , guesses_left, ("\n")
     pass
-
 
 # define event handlers for control panel
 def range20():
@@ -37,15 +40,15 @@ def range20():
 
    
 def input_guess(guess):    
-    # main game logic goes here	
+    # main game logic goes here 
     global guesses_left
     global secret_num 
     
     won = False
     
-    print "You guessed: ",guess
+    print ("You guessed: "),guess
     guesses_left = guesses_left - 1
-    print "Number of remaining guesses is ", guesses_left
+    print ("Number of remaining guesses is "), guesses_left
     
     if int(guess) == secret_num:       
         won = True
@@ -56,20 +59,19 @@ def input_guess(guess):
         
         
     if won:
-        print "That is correct! Congratulations!\n"
+        print ("That is correct! Congratulations!\n")
         new_game()
         return
-    elif guesses_left == 0:
-        print "Game over. You didn't guess the number in time!"   
+        print ("Game over. You didn't guess the number in time!")   
         new_game()
         return
     else:
-        print result
+        print (result)
         pass
             
     
 # create frame
-f = simplegui.create_frame("Game: Guess the number!", 250, 250)
+f = simplegui.create_frame("Game: Guess the number!", 200, 250)
 f.set_canvas_background('Green')
 
 # register event handlers for control elements
